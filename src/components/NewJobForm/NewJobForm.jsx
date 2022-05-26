@@ -34,7 +34,7 @@ function NewJobForm() {
         {
           // eslint-disable-next-line no-unused-vars
           ({ values, errors, handleChange, handleSubmit }) =>
-            <form onSubmit={handleSubmit} className="registerForm">
+            <form onSubmit={handleSubmit}>
               <div className='jobNameContainer'>
                 <input name='jobName' value={values.jobName} placeholder="Type a job." type="text" onChange={handleChange} />
                 {errors.jobName && <div className='errorMessage'>*{errors.jobName}</div>}
