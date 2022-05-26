@@ -63,7 +63,7 @@ function NewJobForm() {
                     color: '#222831',
                   }
                 }}>
-                  <InputLabel id="demo-simple-select-label" sx={{ color: '#222831', fontWeight: 'bold' }}>Priority</InputLabel>
+                  <InputLabel id="demo-simple-select-label" sx={{ color: 'black', fontWeight: 'bold' }}>Priority</InputLabel>
                   <Select
 
                     labelId="demo-simple-select-label"
