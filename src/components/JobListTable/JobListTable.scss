@@ -1,0 +1,85 @@
+.jobListTableContainer{
+    
+    table{
+        width: 100%;
+        border-collapse: collapse;
+
+        thead{
+            border-bottom: 1px solid black;
+            tr{
+                th{
+                    padding: 1rem;
+                    font-size: 1.3rem;
+                }
+
+                .jobNameTitle{
+                    text-align: left; 
+                }                
+                .title{
+                    text-align: center;
+                }
+                
+            }
+        }
+        tbody{
+            tr{
+                &:nth-child(even){
+                    background-color: #EEEEEE;
+                }
+                .jobName{
+                    font-size: 1.1rem;
+                }
+                td{
+                    padding:1rem 1rem;
+
+                }
+                .row{
+                    text-align: center;
+                }
+                .priority{
+                    padding:0.3rem 1rem;
+                    border-radius: 10px;
+                    font-weight: bold;
+                }
+                .urgent{
+                    background-color: crimson;
+                    color: white;
+                }
+                .regular{
+                    background-color: orange;
+                    color: white;
+                }
+                .trivial{
+                    background-color: cornflowerblue;
+                    color: white;
+                }
+
+                button{
+                    padding: 0.5rem;
+                    height: 2.5rem;
+                    cursor: pointer;
+                    background-color: transparent;
+                    border: none ;
+                }
+
+                .delete{
+                    &:hover{
+                        fill:crimson
+                    }
+                }
+                .edit{
+                    margin-right: 1rem;
+                    
+                    svg{
+                        &:hover{
+                            fill: orange;
+                            font-weight: bold;
+                        }
+                    }
+                }
+            }
+        }
+       
+
+    }
+}

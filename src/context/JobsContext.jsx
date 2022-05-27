@@ -6,7 +6,8 @@ const JobsContext = createContext();
 export const JobsProvider = ({ children }) => {
 
   const jobs = [
-    { id: 1, jobName: 'rise company task yap.', priority: 'Urgent' }
+    { id: 1, jobName: 'rise company task yap.', priority: 'Urgent' },
+    { id: 2, jobName: 'test job.', priority: 'Regular' }
   ];
 
   const values = {

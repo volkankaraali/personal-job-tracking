@@ -1,0 +1,35 @@
+.jobSearchContainer{
+    padding: 2rem 0px;
+    display: flex;
+    justify-content: center;
+
+    ::placeholder{
+        color: #393E46;
+        font-weight: bold;
+    }
+    :-ms-input-placeholder{
+        color: #393E46;
+        font-weight: bold;
+    }
+    input{
+        width: 50%;
+        height: 2rem;
+        padding: 0px 0.5rem;
+        margin-right: 1rem;
+        outline: none;
+        font-size: 1rem;
+        border:2px solid #00ADB5;
+        border-radius: 10px;
+    }
+
+    select{
+        font-size: 1rem;
+        font-weight: bold;
+        width: 10rem;
+        outline: none;
+        padding: 0px 0.5rem;
+        border:2px solid #00ADB5;
+        border-radius: 10px;
+        color: #222831;
+    }
+}
