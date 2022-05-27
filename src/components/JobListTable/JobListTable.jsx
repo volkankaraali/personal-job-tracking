@@ -1,13 +1,19 @@
+/* eslint-disable no-unused-vars */
 import React, { useState } from 'react';
 import DeleteIcon from '../../constants/icons/DeleteIcon';
 import DownArrowIcon from '../../constants/icons/DownArrowIcon';
 import EditIcon from '../../constants/icons/EditIcon';
 import UpArrowIcon from '../../constants/icons/UpArrowIcon';
+import { useJobs } from '../../context/JobsContext';
+import EditModal from '../EditModal/EditModal';
 import './JobListTable.scss';
 function JobListTable({ filteredJobs, setFilteredJobs }) {
 
+  const { setJobId } = useJobs();
+
   const [sortByName, setSortByName] = useState(false);
   const [sortByPriority, setSortByPriority] = useState(false);
+  const [openEditModal, setOpenEditModal] = useState(false);
 
   const sortJobsByName = () => {
     setSortByPriority(false);
@@ -33,6 +39,12 @@ function JobListTable({ filteredJobs, setFilteredJobs }) {
     const priorityOrder = ['Urgent', 'Regular', 'Trivial'];
     let arr = [...filteredJobs.sort((x, y) => priorityOrder.indexOf(x.priority) - priorityOrder.indexOf(y.priority))];
     setFilteredJobs(arr);
+  };
+
+  const handleEditModalOpen = (jobId) => {
+    console.log(jobId);
+    setJobId(jobId);
+    setOpenEditModal(true);
   };
 
   return (
@@ -74,7 +86,7 @@ function JobListTable({ filteredJobs, setFilteredJobs }) {
                   </span>
                 </td>
                 <td className='row'>
-                  <button className='edit'><EditIcon /></button>
+                  <button className='edit' onClick={() => handleEditModalOpen(job.id)}><EditIcon /></button>
                   <button className='delete'><DeleteIcon /></button>
                 </td>
               </tr>
@@ -82,7 +94,7 @@ function JobListTable({ filteredJobs, setFilteredJobs }) {
           }
         </tbody>
       </table>
-
+      <EditModal openEditModal={openEditModal} setOpenEditModal={setOpenEditModal} />;
     </div>
   );
 }

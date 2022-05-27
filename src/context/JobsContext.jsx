@@ -10,6 +10,8 @@ export const JobsProvider = ({ children }) => {
     { id: 2, jobName: 'test job.', priority: 'Regular' }
   ]);
 
+  const [jobId, setJobId] = useState(0);
+
   useEffect(() => {
     let jobsInLocaleStorage = JSON.parse(localStorage.getItem('jobs'));
     if (jobsInLocaleStorage == null) {
@@ -22,7 +24,9 @@ export const JobsProvider = ({ children }) => {
 
   const values = {
     jobs,
-    setJobs
+    setJobs,
+    setJobId,
+    jobId
   };
   return <JobsContext.Provider value={values}>{children}</JobsContext.Provider>;
 };

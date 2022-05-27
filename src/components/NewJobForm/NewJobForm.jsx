@@ -43,7 +43,7 @@ function NewJobForm() {
 
               <div className='priorityContainer' >
                 <select name="priority" value={values.priority} onChange={handleChange}>
-                  <option value="" disabled selected>Choose Priority</option>
+                  <option value="" disabled>Choose Priority</option>
                   <option value="Urgent">Urgent</option>
                   <option value="Regular">Regular</option>
                   <option value="Trivial">Trivial</option>
