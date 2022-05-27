@@ -13,8 +13,12 @@ function JobList() {
 
 
   useEffect(() => {
-    setFilteredJobs(jobs);
+    const priorityOrder = ['Urgent', 'Regular', 'Trivial'];
+    let arr = [...jobs.sort((x, y) => priorityOrder.indexOf(x.priority) - priorityOrder.indexOf(y.priority))];
+    setFilteredJobs(arr);
+
   }, [jobs]);
+
 
   //filtered jobs by input text
   useEffect(() => {
@@ -30,6 +34,10 @@ function JobList() {
 
   //filtered jobs by priority options
   useEffect(() => {
+    filteredJobsByPriority();
+  }, [filteredPriority]);
+
+  const filteredJobsByPriority = () => {
     setSearchJobInput('');
     if (filteredPriority === 'All') {
       setFilteredJobs(jobs);
@@ -38,14 +46,24 @@ function JobList() {
       let filtered = jobs.filter(job => job.priority === filteredPriority);
       setFilteredJobs(filtered);
     }
-  }, [filteredPriority]);
+  };
+
 
   return (
     <div className='jobListContainer'>
 
-      <JobSearch setSearchJobInput={setSearchJobInput} filteredPriority={filteredPriority} setFilteredPriority={setFilteredPriority} />
+      <JobSearch
+        setSearchJobInput={setSearchJobInput}
+        filteredPriority={filteredPriority}
+        setFilteredPriority={setFilteredPriority}
+      />
 
-      <JobListTable filteredJobs={filteredJobs} />
+      <JobListTable
+        filteredJobs={filteredJobs}
+        setFilteredJobs={setFilteredJobs}
+        setSearchJobInput={setSearchJobInput}
+
+      />
 
     </div>
   );

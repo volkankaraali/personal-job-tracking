@@ -15,7 +15,7 @@ function JobSearch({ setSearchJobInput, setFilteredPriority, filteredPriority })
     <div className='jobSearchContainer'>
       <input type="text" placeholder='Search Job' onChange={(e) => handleInputChange(e)} />
       <select name="priority" value={filteredPriority} onChange={(e) => handleSelectChange(e)}>
-        <option defaultValue='All' >All</option>
+        <option value='All' >Priority(All)</option>
         <option value="Urgent">Urgent</option>
         <option value="Regular">Regular</option>
         <option value="Trivial">Trivial</option>

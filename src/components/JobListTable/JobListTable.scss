@@ -14,9 +14,17 @@
 
                 .jobNameTitle{
                     text-align: left; 
-                }                
-                .title{
+                    cursor: pointer;
+
+                    svg{
+                        margin-left: 1rem;
+                    }
+                } 
+                .priority{
                     text-align: center;
+                    svg{
+                        margin-left: 1rem;
+                    }
                 }
                 
             }
