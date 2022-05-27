@@ -22,6 +22,10 @@
             }
         }
         tbody{
+            .noFilteredJob{
+                color: crimson;
+                font-weight: bold;
+            }
             tr{
                 &:nth-child(even){
                     background-color: #EEEEEE;

@@ -3,6 +3,7 @@ import DeleteIcon from '../../constants/icons/DeleteIcon';
 import EditIcon from '../../constants/icons/EditIcon';
 import './JobListTable.scss';
 function JobListTable({ filteredJobs }) {
+
   return (
     <div className='jobListTableContainer'>
 
@@ -15,6 +16,9 @@ function JobListTable({ filteredJobs }) {
           </tr>
         </thead>
         <tbody>
+          {
+            filteredJobs.length === 0 && <tr className='noFilteredJob'><td>There is not a job.</td></tr>
+          }
           {
             filteredJobs.map(job => (
               <tr key={job.id}>
@@ -31,7 +35,6 @@ function JobListTable({ filteredJobs }) {
               </tr>
             ))
           }
-          <tr></tr>
         </tbody>
       </table>
 

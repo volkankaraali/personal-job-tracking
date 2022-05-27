@@ -6,11 +6,17 @@ import JobSearch from '../JobSearch/JobSearch';
 import './JobList.scss';
 function JobList() {
   const { jobs } = useJobs();
-  // eslint-disable-next-line no-unused-vars
+
   const [searchJobInput, setSearchJobInput] = useState('');
   const [filteredJobs, setFilteredJobs] = useState([]);
   const [filteredPriority, setFilteredPriority] = useState('All');
 
+
+  useEffect(() => {
+    setFilteredJobs(jobs);
+  }, [jobs]);
+
+  //filtered jobs by input text
   useEffect(() => {
     setFilteredPriority('All');
     if (searchJobInput === '') {
@@ -22,7 +28,9 @@ function JobList() {
     }
   }, [searchJobInput]);
 
+  //filtered jobs by priority options
   useEffect(() => {
+    setSearchJobInput('');
     if (filteredPriority === 'All') {
       setFilteredJobs(jobs);
     }
@@ -31,8 +39,6 @@ function JobList() {
       setFilteredJobs(filtered);
     }
   }, [filteredPriority]);
-
-
 
   return (
     <div className='jobListContainer'>

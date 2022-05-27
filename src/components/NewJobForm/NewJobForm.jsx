@@ -1,12 +1,23 @@
+/* eslint-disable no-unused-vars */
 import React from 'react';
 import './NewJobForm.scss';
-// eslint-disable-next-line no-unused-vars
-import { FormControl, InputLabel, MenuItem, Select } from '@mui/material';
 import { Formik } from 'formik';
 import { NewJobSchema } from '../../constants/yupSchema';
 import AddIcon from '@mui/icons-material/Add';
+import { v4 as uuidv4 } from 'uuid';
+import { useJobs } from '../../context/JobsContext';
 function NewJobForm() {
+  const { setJobs, jobs } = useJobs();
 
+  const addJob = (auth) => {
+    //generete uniq id
+    let id = uuidv4();
+
+    let newJobsInStorage = JSON.parse(localStorage.getItem('jobs'));
+    newJobsInStorage.push({ id, jobName: auth.jobName, priority: auth.priority });
+    localStorage.setItem('jobs', JSON.stringify(newJobsInStorage));
+    setJobs(newJobsInStorage);
+  };
   return (
     <div className='container'>
       <h1>Create New Job</h1>
@@ -18,12 +29,11 @@ function NewJobForm() {
 
         validationSchema={NewJobSchema}
         onSubmit={(auth, { resetForm }) => {
-          console.log(auth);
+          addJob(auth);
           resetForm();
         }}
       >
         {
-          // eslint-disable-next-line no-unused-vars
           ({ values, errors, handleChange, handleSubmit }) =>
             <form onSubmit={handleSubmit}>
               <div className='jobNameContainer'>
@@ -33,6 +43,7 @@ function NewJobForm() {
 
               <div className='priorityContainer' >
                 <select name="priority" value={values.priority} onChange={handleChange}>
+                  <option value="" disabled selected>Choose Priority</option>
                   <option value="Urgent">Urgent</option>
                   <option value="Regular">Regular</option>
                   <option value="Trivial">Trivial</option>
