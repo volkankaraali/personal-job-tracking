@@ -14,23 +14,24 @@
 
                 .jobNameTitle{
                     text-align: left; 
-                    span{
+                    div{
                         cursor: pointer;
-
+                        svg{
+                            margin-left: 1rem;
+                        }
                     }
-                    svg{
-                        margin-left: 1rem;
-                    }
+                    
                 } 
                 .priority{
                     text-align: center;
-                    span{
+                    div{
                         cursor: pointer;
 
+                        svg{
+                            margin-left: 1rem;
+                        }
                     }
-                    svg{
-                        margin-left: 1rem;
-                    }
+                    
                 }
                 
             }
@@ -100,4 +101,208 @@
        
 
     }
+}
+
+
+@media screen and (min-width:426px) and (max-width:768px) {
+    .jobListTableContainer{
+        overflow: scroll;
+        table{
+            thead{
+                tr{
+                    th{
+                        padding: 0.5rem 0.2rem;
+                        font-size: 0.8rem;
+                    }
+  
+                    .jobNameTitle{
+                       div{
+                          font-size: 0.9rem;
+                          display: flex;
+                          align-items: center;
+  
+                          svg{
+                              margin-left: 0.4rem;
+                          }
+                       }
+                    }
+                    .priority{
+                        div{
+                          font-size: 0.9rem;
+                          display: flex;
+                          align-items: center;
+                          justify-content: center;
+  
+                          svg{
+                              margin-left: 0.4rem;
+                          }
+                        }
+                    }
+                }
+            }
+  
+            tbody{
+                tr {
+                  .jobName{
+                    
+                  }
+                  .edit{
+                      margin-right: 0;
+                  }
+                }
+            }
+        }
+    }
+}
+@media screen and (min-width:376px) and (max-width:425px) {
+    .jobListTableContainer{
+        overflow: scroll;
+        table{
+            thead{
+                tr{
+                    th{
+                        padding: 0.5rem 0.2rem;
+                        font-size: 0.8rem;
+                    }
+  
+                    .jobNameTitle{
+                       div{
+                          font-size: 0.9rem;
+                          display: flex;
+                          align-items: center;
+  
+                          svg{
+                              margin-left: 0.4rem;
+                          }
+                       }
+                    }
+                    .priority{
+                        div{
+                          font-size: 0.9rem;
+                          display: flex;
+                          align-items: center;
+                          justify-content: center;
+  
+                          svg{
+                              margin-left: 0.4rem;
+                          }
+                        }
+                    }
+                }
+            }
+  
+            tbody{
+                tr {
+                  .jobName{
+                    
+                  }
+                  .edit{
+                      margin-right: 0;
+                  }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (min-width:321px) and (max-width:375px) {
+    .jobListTableContainer{
+        overflow: scroll;
+        table{
+            thead{
+                tr{
+                    th{
+                        padding: 0.5rem 0.2rem;
+                        font-size: 0.8rem;
+                    }
+  
+                    .jobNameTitle{
+                       div{
+                          font-size: 0.9rem;
+                          display: flex;
+                          align-items: center;
+  
+                          svg{
+                              margin-left: 0.4rem;
+                          }
+                       }
+                    }
+                    .priority{
+                        div{
+                          font-size: 0.9rem;
+                          display: flex;
+                          align-items: center;
+                          justify-content: center;
+  
+                          svg{
+                              margin-left: 0.4rem;
+                          }
+                        }
+                    }
+                }
+            }
+  
+            tbody{
+                tr {
+                  .jobName{
+                    
+                  }
+                  .edit{
+                      margin-right: 0;
+                  }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width:320px) {
+  .jobListTableContainer{
+      overflow: scroll;
+      table{
+          thead{
+              tr{
+                  th{
+                      padding: 0.5rem 0.2rem;
+                      font-size: 0.8rem;
+                  }
+
+                  .jobNameTitle{
+                     div{
+                        font-size: 0.9rem;
+                        display: flex;
+                        align-items: center;
+
+                        svg{
+                            margin-left: 0.4rem;
+                        }
+                     }
+                  }
+                  .priority{
+                      div{
+                        font-size: 0.9rem;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+
+                        svg{
+                            margin-left: 0.4rem;
+                        }
+                      }
+                  }
+              }
+          }
+
+          tbody{
+              tr {
+                .jobName{
+                  
+                }
+                .edit{
+                    margin-right: 0;
+                }
+              }
+          }
+      }
+  }
 }

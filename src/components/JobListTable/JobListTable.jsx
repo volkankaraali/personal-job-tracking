@@ -60,20 +60,20 @@ function JobListTable({ filteredJobs, setFilteredJobs }) {
         <thead>
           <tr>
             <th className='jobNameTitle' >
-              <span onClick={() => sortJobsByName()}>
+              <div onClick={() => sortJobsByName()}>
                 Job Name
                 {
                   sortByName ? <DownArrowIcon size={15} /> : <UpArrowIcon size={15} />
                 }
-              </span>
+              </div>
             </th>
             <th className='priority' >
-              <span onClick={() => sortJobsByPriority()}>
+              <div onClick={() => sortJobsByPriority()}>
                 Priority
                 {
                   sortByPriority ? <DownArrowIcon size={15} /> : <UpArrowIcon size={15} />
                 }
-              </span>
+              </div>
             </th>
             <th >Actions</th>
           </tr>

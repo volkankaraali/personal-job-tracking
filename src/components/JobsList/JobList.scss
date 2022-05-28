@@ -1,7 +1,40 @@
 .jobListContainer{
-    padding: 0px 220px;
+    padding: 0px 13rem;
 
     .tableHeader{
         font-weight: bold;
+    }
+}
+
+@media screen and (min-width:1025px) and (max-width:1440px) {
+    .jobListContainer{
+        padding: 1rem 1.5rem;
+    }
+}
+
+@media screen and (min-width:769px) and (max-width:1024px) {
+    .jobListContainer{
+        padding: 1rem 1.5rem;
+    }
+}
+
+@media screen and (min-width:426px) and (max-width:768px) {
+    .jobListContainer{
+        padding: 1rem 1.5rem;
+    }
+}
+@media screen and (min-width:376px) and (max-width:425px) {
+    .jobListContainer{
+        padding: 1rem 1.5rem;
+    }
+}
+@media screen and (min-width:321px) and (max-width:375px) {
+    .jobListContainer{
+        padding: 1rem 1.5rem;
+    }
+}
+@media screen and (max-width:320px){
+    .jobListContainer{
+        padding: 1rem 1.5rem;
     }
 }

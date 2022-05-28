@@ -26,10 +26,69 @@
         font-size: 1rem;
         font-weight: bold;
         width: 10rem;
+        height: 2.2rem;
         outline: none;
         padding: 0px 0.5rem;
         border:2px solid #00ADB5;
         border-radius: 10px;
         color: #222831;
+    }
+}
+
+
+@media screen and (min-width:426px) and (max-width:768px) {
+    .jobSearchContainer{
+        padding: 1rem 0;
+        flex-direction: column;
+        input{
+            width: 100%;
+            margin-bottom: 1rem;
+        }
+        select{
+            width: 100%;
+        }
+
+    }
+}
+@media screen and (min-width:376px) and (max-width:475px) {
+    .jobSearchContainer{
+        padding: 1rem 0;
+        flex-direction: column;
+        input{
+            width: 100%;
+            margin-bottom: 1rem;
+        }
+        select{
+            width: 100%;
+        }
+
+    }
+}
+@media screen and (min-width:321px) and (max-width:375px) {
+    .jobSearchContainer{
+        padding: 1rem 0;
+        flex-direction: column;
+        input{
+            width: 100%;
+            margin-bottom: 1rem;
+        }
+        select{
+            width: 100%;
+        }
+
+    }
+}
+@media screen and (max-width:320px) {
+    .jobSearchContainer{
+        padding: 1rem 0;
+        flex-direction: column;
+        input{
+            width: 100%;
+            margin-bottom: 1rem;
+        }
+        select{
+            width: 100%;
+        }
+
     }
 }
