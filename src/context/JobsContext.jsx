@@ -6,7 +6,7 @@ const JobsContext = createContext();
 export const JobsProvider = ({ children }) => {
 
   const [jobs, setJobs] = useState([
-    { id: 1, jobName: 'rise company task yap.', priority: 'Urgent' },
+    { id: 1, jobName: 'rise company task', priority: 'Urgent' },
     { id: 2, jobName: 'test job.', priority: 'Regular' }
   ]);
 

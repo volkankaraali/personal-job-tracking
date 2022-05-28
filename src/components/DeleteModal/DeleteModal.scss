@@ -1,0 +1,19 @@
+.deleteModal{
+    .deletingText{
+        font-size: 1.2rem;
+        span{
+            font-weight: bold;
+        }
+    }
+
+    .okButton{
+        border: none !important;
+        background-color:crimson !important ;
+    }
+    .cancelButton{
+        &:hover{
+            color: #00ADB5 !important;
+            border-color: #00ADB5 !important;
+        }
+    }
+}

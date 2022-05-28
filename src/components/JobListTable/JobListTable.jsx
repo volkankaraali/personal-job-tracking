@@ -5,6 +5,7 @@ import DownArrowIcon from '../../constants/icons/DownArrowIcon';
 import EditIcon from '../../constants/icons/EditIcon';
 import UpArrowIcon from '../../constants/icons/UpArrowIcon';
 import { useJobs } from '../../context/JobsContext';
+import DeleteModal from '../DeleteModal/DeleteModal';
 import EditModal from '../EditModal/EditModal';
 import './JobListTable.scss';
 function JobListTable({ filteredJobs, setFilteredJobs }) {
@@ -13,7 +14,8 @@ function JobListTable({ filteredJobs, setFilteredJobs }) {
 
   const [sortByName, setSortByName] = useState(false);
   const [sortByPriority, setSortByPriority] = useState(false);
-  const [openEditModal, setOpenEditModal] = useState(false);
+  const [IsOpenEditModal, setIsOpenEditModal] = useState(false);
+  const [IsOpenDeleteModal, setIsOpenDeleteModal] = useState(false);
 
   const sortJobsByName = () => {
     setSortByPriority(false);
@@ -42,9 +44,13 @@ function JobListTable({ filteredJobs, setFilteredJobs }) {
   };
 
   const handleEditModalOpen = (jobId) => {
-    console.log(jobId);
     setJobId(jobId);
-    setOpenEditModal(true);
+    setIsOpenEditModal(true);
+  };
+
+  const handleDeleteModalOpen = (jobId) => {
+    setJobId(jobId);
+    setIsOpenDeleteModal(true);
   };
 
   return (
@@ -87,14 +93,15 @@ function JobListTable({ filteredJobs, setFilteredJobs }) {
                 </td>
                 <td className='row'>
                   <button className='edit' onClick={() => handleEditModalOpen(job.id)}><EditIcon /></button>
-                  <button className='delete'><DeleteIcon /></button>
+                  <button className='delete' onClick={() => handleDeleteModalOpen(job.id)} ><DeleteIcon /></button>
                 </td>
               </tr>
             ))
           }
         </tbody>
       </table>
-      <EditModal openEditModal={openEditModal} setOpenEditModal={setOpenEditModal} />;
+      <EditModal IsOpenEditModal={IsOpenEditModal} setIsOpenEditModal={setIsOpenEditModal} />
+      <DeleteModal IsOpenDeleteModal={IsOpenDeleteModal} setIsOpenDeleteModal={setIsOpenDeleteModal} />
     </div>
   );
 }

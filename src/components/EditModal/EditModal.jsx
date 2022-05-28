@@ -4,17 +4,18 @@ import React, { useEffect, useState } from 'react';
 import './EditModal.scss';
 import { useJobs } from '../../context/JobsContext';
 
-function EditModal({ openEditModal, setOpenEditModal }) {
+function EditModal({ IsOpenEditModal, setIsOpenEditModal }) {
   const { jobs, setJobs, jobId } = useJobs();
   const [jobDataById, setJobDataById] = useState([]);
   const [newPriority, setNewPriority] = useState('');
+
   useEffect(() => {
     setJobDataById(jobs.find(job => job.id === jobId));
   }, [jobId]);
 
 
   const handleClose = () => {
-    setOpenEditModal(false);
+    setIsOpenEditModal(false);
   };
 
   const editJob = () => {
@@ -22,13 +23,13 @@ function EditModal({ openEditModal, setOpenEditModal }) {
     localStorage.setItem('jobs', JSON.stringify(newJobs));
     setJobs(newJobs);
     setNewPriority('');
-    setOpenEditModal(false);
+    setIsOpenEditModal(false);
   };
   return (
     <Modal
       className='modal'
       title="Edit Job"
-      visible={openEditModal}
+      visible={IsOpenEditModal}
       onOk={editJob}
       okButtonProps={{ className: 'okButton' }}
       cancelButtonProps={{ className: 'cancelButton' }}

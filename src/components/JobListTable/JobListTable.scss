@@ -14,14 +14,20 @@
 
                 .jobNameTitle{
                     text-align: left; 
-                    cursor: pointer;
+                    span{
+                        cursor: pointer;
 
+                    }
                     svg{
                         margin-left: 1rem;
                     }
                 } 
                 .priority{
                     text-align: center;
+                    span{
+                        cursor: pointer;
+
+                    }
                     svg{
                         margin-left: 1rem;
                     }
