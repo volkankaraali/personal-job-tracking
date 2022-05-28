@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const baseUrl='http://localhost:5000/';
+const baseUrl='https://personal-job-tracking-server.herokuapp.com/';
 
 export const getPriorites = async ()=>{
   try {
