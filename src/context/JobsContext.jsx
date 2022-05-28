@@ -1,5 +1,6 @@
 /* eslint-disable no-unused-vars */
 import React, { createContext, useContext, useEffect, useState } from 'react';
+import { getPriorites } from '../services/priorityService';
 
 const JobsContext = createContext();
 
@@ -12,6 +13,8 @@ export const JobsProvider = ({ children }) => {
 
   const [jobId, setJobId] = useState(0);
 
+  const [priorities, setPriorities] = useState([]);
+
   useEffect(() => {
     let jobsInLocaleStorage = JSON.parse(localStorage.getItem('jobs'));
     if (jobsInLocaleStorage == null) {
@@ -22,11 +25,21 @@ export const JobsProvider = ({ children }) => {
     }
   }, []);
 
+  useEffect(() => {
+    getPriority();
+  }, []);
+
+  const getPriority = async () => {
+    let priorities = await getPriorites();
+    setPriorities(priorities.data);
+  };
+
   const values = {
     jobs,
     setJobs,
     setJobId,
-    jobId
+    jobId,
+    priorities
   };
   return <JobsContext.Provider value={values}>{children}</JobsContext.Provider>;
 };

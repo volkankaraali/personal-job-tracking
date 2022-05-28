@@ -10,7 +10,6 @@ function DeleteModal({ IsOpenDeleteModal, setIsOpenDeleteModal }) {
 
 
   useEffect(() => {
-    console.log(jobId);
     setJobDataById(jobs.find(job => job.id === jobId));
   }, [jobId]);
 

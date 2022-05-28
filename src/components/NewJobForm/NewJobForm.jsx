@@ -7,7 +7,7 @@ import AddIcon from '@mui/icons-material/Add';
 import { v4 as uuidv4 } from 'uuid';
 import { useJobs } from '../../context/JobsContext';
 function NewJobForm() {
-  const { setJobs, jobs } = useJobs();
+  const { setJobs, jobs, priorities } = useJobs();
 
   const addJob = (auth) => {
     //generete uniq id
@@ -44,9 +44,9 @@ function NewJobForm() {
               <div className='priorityContainer' >
                 <select name="priority" value={values.priority} onChange={handleChange}>
                   <option value="" disabled>Choose Priority</option>
-                  <option value="Urgent">Urgent</option>
-                  <option value="Regular">Regular</option>
-                  <option value="Trivial">Trivial</option>
+                  {
+                    priorities.map(p => <option key={p.id} value={p.name}>{p.name}</option>)
+                  }
                 </select>
 
                 {errors.priority && <div className='errorMessage'>*{errors.priority}</div>}

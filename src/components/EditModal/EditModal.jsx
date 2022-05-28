@@ -5,7 +5,7 @@ import './EditModal.scss';
 import { useJobs } from '../../context/JobsContext';
 
 function EditModal({ IsOpenEditModal, setIsOpenEditModal }) {
-  const { jobs, setJobs, jobId } = useJobs();
+  const { jobs, setJobs, jobId, priorities } = useJobs();
   const [jobDataById, setJobDataById] = useState([]);
   const [newPriority, setNewPriority] = useState('');
 
@@ -43,9 +43,9 @@ function EditModal({ IsOpenEditModal, setIsOpenEditModal }) {
         onChange={(e) => setNewPriority(e.target.value)}
       >
         <option value="" disabled>Choose Priority</option>
-        <option className='option' value="Urgent">Urgent</option>
-        <option className='option' value="Regular">Regular</option>
-        <option className='option' value="Trivial">Trivial</option>
+        {
+          priorities.map(p => <option key={p.id} value={p.name}>{p.name}</option>)
+        }
       </select>
     </Modal>
   );
