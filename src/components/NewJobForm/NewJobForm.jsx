@@ -3,9 +3,9 @@ import React from 'react';
 import './NewJobForm.scss';
 import { Formik } from 'formik';
 import { NewJobSchema } from '../../constants/yupSchema';
-import AddIcon from '@mui/icons-material/Add';
 import { v4 as uuidv4 } from 'uuid';
 import { useJobs } from '../../context/JobsContext';
+import PlusIcon from '../../constants/icons/PlusIcon';
 
 function NewJobForm() {
   const { setJobs, priorities } = useJobs();
@@ -54,7 +54,7 @@ function NewJobForm() {
               </div>
 
               <button data-testid='create' className='submitBtn' type='submit' >
-                <AddIcon /> <span>Create</span>
+                <PlusIcon size={15} /> <span>Create</span>
               </button>
             </form>
         }
