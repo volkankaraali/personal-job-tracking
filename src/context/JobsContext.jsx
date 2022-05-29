@@ -7,6 +7,8 @@ export const JobsProvider = ({ children }) => {
 
   const [jobs, setJobs] = useState([
     { id: 1, jobName: 'rise company task', priority: 'Urgent' },
+    { id: 2, jobName: 'regular task', priority: 'Regular' },
+    { id: 3, jobName: 'trivial task', priority: 'Trivial' },
   ]);
 
   //job id uses when edit job or delete job as parameter
