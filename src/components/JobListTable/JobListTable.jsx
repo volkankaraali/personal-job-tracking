@@ -80,10 +80,10 @@ function JobListTable({ filteredJobs, setFilteredJobs }) {
         </thead>
         <tbody>
           {
-            filteredJobs.length === 0 && <tr className='noFilteredJob'><td>There is not a job.</td></tr>
+            filteredJobs?.length === 0 && <tr className='noFilteredJob'><td>There is not a job.</td></tr>
           }
           {
-            filteredJobs.map(job => (
+            filteredJobs?.map(job => (
               <tr key={job.id}>
                 <td className='jobName'>{job.jobName}</td>
                 <td className='row '>
@@ -92,7 +92,7 @@ function JobListTable({ filteredJobs, setFilteredJobs }) {
                   </span>
                 </td>
                 <td className='row'>
-                  <button className='edit' onClick={() => handleEditModalOpen(job.id)}><EditIcon /></button>
+                  <button data-testid={`editButton-${job.id}`} className='edit' onClick={() => handleEditModalOpen(job.id)}><EditIcon /></button>
                   <button className='delete' onClick={() => handleDeleteModalOpen(job.id)} ><DeleteIcon /></button>
                 </td>
               </tr>

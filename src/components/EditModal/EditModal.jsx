@@ -27,6 +27,7 @@ function EditModal({ IsOpenEditModal, setIsOpenEditModal }) {
   };
   return (
     <Modal
+      data-testid='editmodal'
       className='modal'
       title="Edit Job"
       visible={IsOpenEditModal}
