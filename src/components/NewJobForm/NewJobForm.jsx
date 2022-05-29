@@ -6,8 +6,9 @@ import { NewJobSchema } from '../../constants/yupSchema';
 import AddIcon from '@mui/icons-material/Add';
 import { v4 as uuidv4 } from 'uuid';
 import { useJobs } from '../../context/JobsContext';
+
 function NewJobForm() {
-  const { setJobs, jobs, priorities } = useJobs();
+  const { setJobs, priorities } = useJobs();
 
   const addJob = (auth) => {
     //generete uniq id
@@ -38,7 +39,7 @@ function NewJobForm() {
             <form onSubmit={handleSubmit}>
               <div className='jobNameContainer'>
                 <input name='jobName' value={values.jobName} placeholder="Type a job." type="text" onChange={handleChange} />
-                {errors.jobName && <div className='errorMessage'>*{errors.jobName}</div>}
+                {errors.jobName && <div data-testid='errorMessInput' className='errorMessage'>*{errors.jobName}</div>}
               </div>
 
               <div className='priorityContainer' >
@@ -49,10 +50,10 @@ function NewJobForm() {
                   }
                 </select>
 
-                {errors.priority && <div className='errorMessage'>*{errors.priority}</div>}
+                {errors.priority && <div data-testid='errorMessSelect' className='errorMessage'>*{errors.priority}</div>}
               </div>
 
-              <button className='submitBtn' type='submit' >
+              <button data-testid='create' className='submitBtn' type='submit' >
                 <AddIcon /> <span>Create</span>
               </button>
             </form>

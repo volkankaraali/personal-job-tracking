@@ -1,4 +1,3 @@
-/* eslint-disable no-unused-vars */
 import React, { createContext, useContext, useEffect, useState } from 'react';
 import { getPriorites } from '../services/priorityService';
 
@@ -8,9 +7,9 @@ export const JobsProvider = ({ children }) => {
 
   const [jobs, setJobs] = useState([
     { id: 1, jobName: 'rise company task', priority: 'Urgent' },
-    { id: 2, jobName: 'test job.', priority: 'Regular' }
   ]);
 
+  //job id uses when edit job or delete job as parameter
   const [jobId, setJobId] = useState(0);
 
   const [priorities, setPriorities] = useState([]);
@@ -29,6 +28,7 @@ export const JobsProvider = ({ children }) => {
     getPriority();
   }, []);
 
+  //get priorities from api.
   const getPriority = async () => {
     let priorities = await getPriorites();
     setPriorities(priorities.data);

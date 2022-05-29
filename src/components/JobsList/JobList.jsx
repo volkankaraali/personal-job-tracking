@@ -4,7 +4,9 @@ import { useJobs } from '../../context/JobsContext';
 import JobListTable from '../JobListTable';
 import JobSearch from '../JobSearch/JobSearch';
 import './JobList.scss';
+
 function JobList() {
+
   const { jobs } = useJobs();
 
   const [searchJobInput, setSearchJobInput] = useState('');
@@ -12,6 +14,7 @@ function JobList() {
   const [filteredPriority, setFilteredPriority] = useState('All');
 
 
+  //default jobs sorts from urgent to trivial
   useEffect(() => {
     const priorityOrder = ['Urgent', 'Regular', 'Trivial'];
     let arr = [...jobs.sort((x, y) => priorityOrder.indexOf(x.priority) - priorityOrder.indexOf(y.priority))];
